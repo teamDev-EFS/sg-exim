@@ -1,0 +1,40 @@
+# Render deployment configuration for backend - UAT
+services:
+  - type: web
+    name: the11eximoverseas-backend-uat
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: uat
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: the11eximoverseas-db-uat
+          property: connectionString
+      - key: SMTP_USER
+        value: the11eximoverseas@gmail.com
+      - key: SMTP_PASS
+        value: ygio vunt hlca peel
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: 587
+      - key: ADMIN_EMAIL
+        value: the11eximoverseas@gmail.com
+      - key: CORS_ORIGIN
+        value: https://the11eximoverseas-uat.netlify.app
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+
+databases:
+  - name: the11eximoverseas-db-uat
+    plan: free
+    databaseName: the11eximoverseas_uat

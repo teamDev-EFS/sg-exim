@@ -1,0 +1,323 @@
+/* PDF Viewer Custom Styles */
+.pdf-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.pdf-viewer-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+  /* Allow full interaction with PDF */
+  pointer-events: auto;
+  overflow: auto;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .pdf-viewer-iframe {
+    /* Ensure proper scaling on mobile */
+    transform: scale(1);
+    transform-origin: top left;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .pdf-viewer-iframe {
+    /* Optimize for tablet viewing */
+    min-height: 500px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .pdf-viewer-iframe {
+    /* Full desktop experience */
+    min-height: 600px;
+  }
+}
+
+/* Loading animation */
+.pdf-loading {
+  animation: pdf-loading-pulse 2s ease-in-out infinite;
+}
+
+@keyframes pdf-loading-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Security overlay animations */
+.security-overlay {
+  animation: security-fade-in 0.3s ease-out;
+}
+
+@keyframes security-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PDF controls overlay */
+.pdf-controls {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: controls-slide-up 0.3s ease-out;
+}
+
+@keyframes controls-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Browser compatibility fixes */
+.pdf-viewer-iframe::-webkit-scrollbar {
+  display: none;
+}
+
+.pdf-viewer-iframe {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure proper rendering across browsers */
+.pdf-viewer-iframe {
+  /* Firefox */
+  -moz-transform: scale(1);
+  /* Safari/Chrome */
+  -webkit-transform: scale(1);
+  /* IE/Edge */
+  -ms-transform: scale(1);
+  /* Standard */
+  transform: scale(1);
+}
+
+/* High DPI display support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pdf-viewer-iframe {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles - hide PDF viewer when printing */
+@media print {
+  .pdf-viewer-container {
+    display: none !important;
+  }
+}
+
+/* Additional security measures while allowing viewing */
+.pdf-viewer-iframe::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.pdf-viewer-iframe::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.pdf-viewer-iframe::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.pdf-viewer-iframe::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Ensure PDF content is visible and readable */
+.pdf-viewer-iframe {
+  /* Allow PDF to render properly */
+  display: block;
+  /* Prevent any blocking overlays */
+  z-index: 1;
+  /* Ensure content is visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal z-index fixes */
+.pdf-modal-overlay {
+  z-index: 9999 !important;
+}
+
+.pdf-modal-content {
+  z-index: 10000 !important;
+  position: relative;
+}
+
+/* Clean PDF viewer - no browser controls */
+.pdf-viewer-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+  pointer-events: auto;
+  overflow: auto;
+}
+
+/* Mobile-specific optimizations - Simple small window */
+@media (max-width: 640px) {
+  .pdf-viewer-iframe {
+    /* Simple mobile view - no complex scaling */
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #ffffff;
+    /* Allow touch scrolling */
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+  }
+
+  /* Draggable modal mobile optimizations */
+  .draggable-modal {
+    /* Better touch handling */
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .draggable-modal iframe {
+    /* Allow scrolling within iframe */
+    touch-action: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .pdf-viewer-iframe {
+    zoom: 0.9;
+    -webkit-transform: scale(0.9);
+    -webkit-transform-origin: 0 0;
+    transform: scale(0.9);
+    transform-origin: 0 0;
+    width: 111%;
+    height: 111%;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .pdf-viewer-iframe {
+    /* Better touch scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+}
+
+/* Draggable modal optimizations */
+.draggable-modal {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.draggable-modal * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.draggable-modal input,
+.draggable-modal textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Smooth dragging */
+.draggable-modal.dragging {
+  transition: none !important;
+}
+
+/* Mobile touch optimizations */
+@media (max-width: 768px) {
+  .draggable-modal {
+    touch-action: none;
+  }
+
+  .draggable-modal iframe {
+    touch-action: auto;
+  }
+}
+
+/* Security watermark styles */
+.pdf-watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  z-index: 10;
+}
+
+.pdf-watermark-text {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Security overlay */
+.pdf-security-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  z-index: 5;
+  background: transparent;
+}
+
+/* Allow full interaction with PDF content */
+.pdf-viewer-container * {
+  pointer-events: auto;
+}

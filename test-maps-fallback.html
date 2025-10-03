@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps Fallback Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .test-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .map-container {
+        height: 400px;
+        border: 1px solid #ccc;
+        margin: 20px 0;
+      }
+      .test-button {
+        padding: 10px 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 5px;
+      }
+      .test-button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test-container">
+      <h1>Google Maps Fallback Test</h1>
+
+      <h2>Test 1: Valid API Key</h2>
+      <div id="map1" class="map-container"></div>
+      <button class="test-button" onclick="testValidKey()">
+        Test Valid Key
+      </button>
+
+      <h2>Test 2: Invalid API Key</h2>
+      <div id="map2" class="map-container"></div>
+      <button class="test-button" onclick="testInvalidKey()">
+        Test Invalid Key
+      </button>
+
+      <h2>Test 3: No API Key</h2>
+      <div id="map3" class="map-container"></div>
+      <button class="test-button" onclick="testNoKey()">Test No Key</button>
+
+      <h2>Test 4: Billing Error Simulation</h2>
+      <div id="map4" class="map-container"></div>
+      <button class="test-button" onclick="testBillingError()">
+        Test Billing Error
+      </button>
+    </div>
+
+    <script>
+      const validApiKey = "AIzaSyDoy4xd7POgSrkLzxi8Z3b5DT4nrDA-zmw";
+      const invalidApiKey = "invalid-key";
+
+      function showFallback(containerId, title, isBillingError = false) {
+        const container = document.getElementById(containerId);
+        const bgColor = isBillingError ? "#fef3c7" : "#f3f4f6";
+        const borderColor = isBillingError ? "#f59e0b" : "transparent";
+        const icon = isBillingError ? "⚠️" : "📍";
+        const titleColor = isBillingError ? "#92400e" : "#374151";
+        const messageColor = isBillingError ? "#92400e" : "#6b7280";
+        const message = isBillingError
+          ? "Google Maps requires billing to be enabled"
+          : "";
+
+        container.innerHTML = `
+                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; background: ${bgColor}; border: 1px solid ${borderColor}; border-radius: 8px; padding: 20px; text-align: center;">
+                     <div style="font-size: 24px; margin-bottom: 10px;">${icon}</div>
+                     <div style="font-weight: 600; margin-bottom: 5px; color: ${titleColor};">${title}</div>
+                     ${
+                       message
+                         ? `<div style="color: ${messageColor}; font-size: 14px; margin-bottom: 10px;">${message}</div>`
+                         : ""
+                     }
+                     <div style="color: #6b7280; font-size: 12px; margin-bottom: 10px;">Lat: 22.7196, Lng: 75.8577</div>
+                     <div style="color: #6b7280; font-size: 12px;">
+                         <a href="https://maps.google.com/?q=22.7196,75.8577" target="_blank" style="color: #3b82f6; text-decoration: none;">
+                             Open in Google Maps
+                         </a>
+                     </div>
+                 </div>
+             `;
+      }
+
+      function loadGoogleMaps(containerId, apiKey, title) {
+        const container = document.getElementById(containerId);
+
+        if (!apiKey) {
+          showFallback(containerId, title);
+          return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap${containerId}`;
+        script.async = true;
+        script.defer = true;
+        script.onerror = () => {
+          console.error(`Failed to load Google Maps for ${containerId}`);
+          showFallback(containerId, title);
+        };
+
+        window[`initMap${containerId}`] = function () {
+          try {
+            const map = new google.maps.Map(container, {
+              center: { lat: 22.7196, lng: 75.8577 },
+              zoom: 15,
+            });
+
+            const marker = new google.maps.Marker({
+              position: { lat: 22.7196, lng: 75.8577 },
+              map: map,
+              title: title,
+            });
+
+            console.log(`Google Maps loaded successfully for ${containerId}`);
+          } catch (error) {
+            console.error(`Error initializing map for ${containerId}:`, error);
+            showFallback(containerId, title);
+          }
+        };
+
+        document.head.appendChild(script);
+      }
+
+      function testValidKey() {
+        loadGoogleMaps(
+          "map1",
+          validApiKey,
+          "The11EximOverSeas - Valid Key Test"
+        );
+      }
+
+      function testInvalidKey() {
+        loadGoogleMaps(
+          "map2",
+          invalidApiKey,
+          "The11EximOverSeas - Invalid Key Test"
+        );
+      }
+
+      function testNoKey() {
+        loadGoogleMaps("map3", null, "The11EximOverSeas - No Key Test");
+      }
+
+      function testBillingError() {
+        showFallback("map4", "The11EximOverSeas - Billing Error Test", true);
+      }
+
+      // Auto-run tests
+      window.onload = function () {
+        testValidKey();
+        testInvalidKey();
+        testNoKey();
+        testBillingError();
+      };
+    </script>
+  </body>
+</html>

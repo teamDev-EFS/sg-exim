@@ -1,0 +1,6 @@
+# Netlify redirects for API proxying
+# This file tells Netlify to proxy all /api/* requests to the Render backend
+/api/* https://trustglobeexports.onrender.com/api/:splat 200
+
+# Fallback for SPA routing - serve index.html for all other routes
+/* /index.html 200

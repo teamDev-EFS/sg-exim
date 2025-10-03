@@ -1,0 +1,35 @@
+[build]
+  # Build command for Netlify Staging
+  command = "npm run build"
+  # Directory to publish
+  publish = "dist"
+
+[build.environment]
+  # Frontend Environment Variables for Staging
+  VITE_API_URL = "https://the11eximoverseas-backend-staging.onrender.com/api"
+  VITE_APP_NAME = "TrustGlobalExports"
+  VITE_APP_VERSION = "1.0.0"
+  VITE_CONTACT_EMAIL = "trustglobalexports@gmail.com"
+  VITE_CONTACT_PHONE_PRIMARY = "+91 9xxxxxxxxx"
+  VITE_CONTACT_PHONE_SECONDARY = "+91 9xxxxxxxxx"
+  VITE_ENABLE_ANALYTICS = "true"
+  VITE_ENABLE_DEBUG = "true"
+  VITE_GOOGLE_MAPS_API_KEY = "API_KEY"
+
+[[redirects]]
+  # Handle client-side routing
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.staging]
+  # Staging-specific settings
+  command = "npm run build"
+
+[context.deploy-preview]
+  # Deploy preview settings
+  command = "npm run build"
+
+[context.branch-deploy]
+  # Branch deploy settings
+  command = "npm run build"
