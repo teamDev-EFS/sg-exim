@@ -49,7 +49,7 @@ const SEO = ({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-9xxxxxxxxx",
+      telephone: "+91-7247211741",
       contactType: "Customer Service",
       areaServed: "Global",
       availableLanguage: ["English", "Hindi"],

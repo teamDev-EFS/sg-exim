@@ -180,16 +180,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 9xxxxxxxxx", "+91 9xxxxxxxxx", "Mon-Fri 9AM-6PM"],
+      details: ["+91 7247211741", "+91 9171126253", "Mon-Fri 9AM-6PM"],
       color: "text-success-600",
     },
     {
       icon: Mail,
       title: "Email",
-      details: [
-        "info@trustglobeexports.com",
-        "deepanshu@trustglobeexports.com",
-      ],
+      details: ["shivambanna1304@gmail.com", "deepanshupatel539@gmail.com"],
       color: "text-accent-600",
     },
     {
@@ -602,7 +599,7 @@ const Contact = () => {
                         </div>
                         <div className="flex items-center">
                           <Phone className="h-4 w-4 mr-2 text-blue-600" />
-                          <span>+91 9xxxxxxxxx</span>
+                          <span>+91 7247211741</span>
                         </div>
                       </div>
                     </div>
@@ -616,7 +613,7 @@ const Contact = () => {
                   </h3>
                   <div className="space-y-4">
                     <a
-                      href="tel:+919xxxxxxxxx"
+                      href="tel:+917247211741"
                       className="flex items-center gap-4 p-4 bg-primary-50 rounded-xl hover:bg-primary-100 transition-colors group"
                     >
                       <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -627,12 +624,12 @@ const Contact = () => {
                           Call Now
                         </p>
                         <p className="text-sm text-neutral-600">
-                          +91 9xxxxxxxxx
+                          +91 7247211741
                         </p>
                       </div>
                     </a>
                     <a
-                      href="mailto:info@trustglobeexports.com"
+                      href="mailto:shivambanna1304@gmail.com"
                       className="flex items-center gap-4 p-4 bg-accent-50 rounded-xl hover:bg-accent-100 transition-colors group"
                     >
                       <div className="w-12 h-12 bg-accent-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -643,7 +640,7 @@ const Contact = () => {
                           Email Us
                         </p>
                         <p className="text-sm text-neutral-600">
-                          info@trustglobeexports.com
+                          shivambanna1304@gmail.com
                         </p>
                       </div>
                     </a>

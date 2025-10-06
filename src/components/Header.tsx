@@ -52,12 +52,12 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4 lg:space-x-8">
             <div className="flex items-center space-x-2 group">
               <Phone className="h-3 w-3 sm:h-4 sm:w-4 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">+91 9xxxxxxxxx</span>
+              <span className="font-medium">+91 7247211741</span>
             </div>
             <div className="flex items-center space-x-2 group">
               <Mail className="h-3 w-3 sm:h-4 sm:w-4 group-hover:scale-110 transition-transform" />
               <span className="font-medium text-xs sm:text-sm">
-                info@trustglobeexports.com
+                shivambanna1304@gmail.com
               </span>
             </div>
           </div>

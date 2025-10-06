@@ -10,9 +10,9 @@
   # Frontend Environment Variables for Netlify
   VITE_APP_NAME = "TrustGlobe Exports"
   VITE_APP_VERSION = "1.0.0"
-  VITE_CONTACT_EMAIL = "info@trustglobeexports.com"
-  VITE_CONTACT_PHONE_PRIMARY = "+91 9xxxxxxxxx"
-  VITE_CONTACT_PHONE_SECONDARY = "+91 9xxxxxxxxx"
+  VITE_CONTACT_EMAIL = "shivambanna1304@gmail.com"
+  VITE_CONTACT_PHONE_PRIMARY = "+91 7247211741"
+  VITE_CONTACT_PHONE_SECONDARY = "+91 9171126253"
   VITE_ENABLE_ANALYTICS = "true"
   VITE_ENABLE_DEBUG = "false"
   VITE_GOOGLE_MAPS_API_KEY = "API_KEY"

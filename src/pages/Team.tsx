@@ -8,7 +8,6 @@ import {
   Star,
   Instagram,
   Facebook,
-  Youtube,
   X,
   CheckCircle,
 } from "lucide-react";
@@ -40,38 +39,10 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: "Deepanshu Patel",
-      position: "Founder & Director",
-      image: "/images/Deepanshu Patel.png",
-      bio: "Visionary leader with extensive experience in international trade and export operations. Passionate about connecting India's finest bamboo products, jute bags, and agricultural products to global markets and building sustainable business relationships.",
-      experience: "15+ years",
-      expertise: [
-        "International Trade",
-        "Export Operations",
-        "Business Development",
-        "Bamboo Products",
-        "Agricultural Exports",
-        "Supply Chain Management",
-      ],
-      linkedin: "https://www.linkedin.com/in/deepanshu-patel-trustglobe",
-      instagram: "https://www.instagram.com/trustglobeexports",
-      youtube: "https://www.youtube.com/@TrustGlobeExports",
-      facebook: "https://www.facebook.com/trustglobeexports",
-      twitter: "https://www.twitter.com/trustglobeexports",
-      email: "deepanshu@trustglobeexports.com",
-      achievements: [
-        "Established global trade network for bamboo products",
-        "Led successful export operations across multiple product categories",
-        "Industry leadership recognition in sustainable exports",
-        "Built strong supplier relationships",
-        "Expanded market reach to 20+ countries",
-      ],
-    },
-    {
       name: "Shivam Singh Panwar",
-      position: "Co-Founder & Operations Director",
+      position: "Founder & Director",
       image: "/images/Shivam Singh Panwar.png",
-      bio: "Operations expert with deep knowledge in agricultural products, onion & garlic processing, and quality control. Committed to maintaining the highest standards in product quality and customer satisfaction across all export operations.",
+      bio: "Visionary leader with extensive experience in international trade and export operations. Passionate about connecting India's finest bamboo products, jute bags, and agricultural products to global markets and building sustainable business relationships.",
       experience: "12+ years",
       expertise: [
         "Agricultural Exports",
@@ -81,18 +52,48 @@ const Team = () => {
         "Product Development",
         "Customer Relations",
       ],
-      linkedin: "https://www.linkedin.com/in/shivam-singh-panwar-trustglobe",
-      instagram: "https://www.instagram.com/trustglobeexports",
-      youtube: "https://www.youtube.com/@TrustGlobeExports",
-      facebook: "https://www.facebook.com/trustglobeexports",
+      linkedin:
+        "https://www.linkedin.com/in/trustglobe-exports-3a8a76388?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram:
+        "https://www.instagram.com/trustglobe_exports?igsh=MTBnZXk4Yjdqd2xhNA==",
+      facebook: "https://www.facebook.com/share/1CU22hmMH6/",
       twitter: "https://www.twitter.com/trustglobeexports",
-      email: "shivam@trustglobeexports.com",
+      email: "shivambanna1304@gmail.com",
       achievements: [
         "Developed quality control systems for agricultural products",
         "Led operations for onion and garlic processing",
         "Established strong customer relationships",
         "Implemented sustainable farming partnerships",
         "Achieved 99% customer satisfaction rate",
+      ],
+    },
+    {
+      name: "Deepanshu Patel",
+      position: "Co-Founder & Operations Director",
+      image: "/images/Deepanshu Patel.png",
+      bio: "Operations expert with deep knowledge in agricultural products, onion & garlic processing, and quality control. Committed to maintaining the highest standards in product quality and customer satisfaction across all export operations.",
+      experience: "15+ years",
+      expertise: [
+        "International Trade",
+        "Export Operations",
+        "Business Development",
+        "Bamboo Products",
+        "Agricultural Exports",
+        "Supply Chain Management",
+      ],
+      linkedin:
+        "https://www.linkedin.com/in/trustglobe-exports-3a8a76388?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagram:
+        "https://www.instagram.com/trustglobe_exports?igsh=MTBnZXk4Yjdqd2xhNA==",
+      facebook: "https://www.facebook.com/share/1CU22hmMH6/",
+      twitter: "https://www.twitter.com/trustglobeexports",
+      email: "deepanshupatel539@gmail.com",
+      achievements: [
+        "Established global trade network for bamboo products",
+        "Led successful export operations across multiple product categories",
+        "Industry leadership recognition in sustainable exports",
+        "Built strong supplier relationships",
+        "Expanded market reach to 20+ countries",
       ],
     },
   ];
@@ -323,7 +324,7 @@ const Team = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 max-w-2xl mx-auto gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-8 lg:gap-12">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
@@ -367,15 +368,6 @@ const Team = () => {
                         aria-label={`${member.name} Instagram`}
                       >
                         <Instagram className="h-5 w-5" />
-                      </a>
-                      <a
-                        href={member.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300"
-                        aria-label={`${member.name} YouTube`}
-                      >
-                        <Youtube className="h-5 w-5" />
                       </a>
                       <a
                         href={member.facebook}
