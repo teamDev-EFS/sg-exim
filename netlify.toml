@@ -16,7 +16,7 @@
   VITE_ENABLE_ANALYTICS = "true"
   VITE_ENABLE_DEBUG = "false"
   VITE_GOOGLE_MAPS_API_KEY = "API_KEY"
-  VITE_DOMAIN = "www.trustglobeexports.com"
+  VITE_DOMAIN = "trustglobeexports.com"
   VITE_API_URL = "/api"
 
 # Redirects are handled by _redirects file in public directory

@@ -12,16 +12,16 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "The 11 Exim Overseas | India's Premier Agro Exporter | Global Trade & Partnerships",
-  description = "The 11 Exim Overseas is a leading agro-export company from India, connecting premium agricultural products to global markets with excellence, sustainability, and trust.",
-  keywords = "The 11 Exim Overseas, 11 Exim Overseas, Exim Overseas India, agricultural exports, premium rice, spices, jaggery, global trade, India exports, agricultural products, international trade, basmati rice, organic products, agro exporter India",
-  image = "https://the11eximoverseas.com/images/11eximoverseas-logo.png",
-  url = "https://the11eximoverseas.com",
+  title = "TrustGlobe Exports | India's Premier Export Company | Bamboo Products & Agricultural Exports",
+  description = "TrustGlobe Exports is a leading export company from India, connecting premium bamboo products, jute bags, onion & garlic products, soyabean, and more to global markets with excellence, sustainability, and trust.",
+  keywords = "TrustGlobe Exports, export company India, bamboo products, jute bags, onion products, garlic products, soyabean, green chillies, mud bottles, pooja items, global trade, India exports, international trade, premium products",
+  image = "https://trustglobeexports.com/images/Trust Globe Exports logo.jpeg",
+  url = "https://trustglobeexports.com",
   type = "website",
   structuredData,
   noindex = false,
 }: SEOProps) => {
-  const baseUrl = "https://the11eximoverseas.com";
+  const baseUrl = "https://trustglobeexports.com";
   const fullImageUrl = image.startsWith("http") ? image : `${baseUrl}${image}`;
   const fullUrl = url.startsWith("http") ? url : `${baseUrl}${url}`;
 
@@ -29,14 +29,14 @@ const SEO = ({
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "The 11 Exim Overseas",
+    name: "TrustGlobe Exports",
     alternateName: [
-      "11 Exim Overseas",
-      "Exim Overseas India",
-      "The11EximOverseas",
+      "TrustGlobe Exports",
+      "Trust Globe Exports",
+      "TrustGlobeExports",
     ],
     url: baseUrl,
-    logo: `${baseUrl}/images/11eximoverseas-logo.png`,
+    logo: `${baseUrl}/images/Trust Globe Exports logo.jpeg`,
     description: description,
     foundingDate: "1999",
     address: {
@@ -97,7 +97,7 @@ const SEO = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="The 11 Exim Overseas" />
+      <meta name="author" content="TrustGlobe Exports" />
       <meta
         name="robots"
         content={noindex ? "noindex, nofollow" : "index, follow"}
@@ -116,7 +116,7 @@ const SEO = ({
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="The 11 Exim Overseas" />
+      <meta property="og:site_name" content="TrustGlobe Exports" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
@@ -129,7 +129,7 @@ const SEO = ({
       {/* Additional SEO Meta Tags */}
       <meta name="theme-color" content="#1e40af" />
       <meta name="msapplication-TileColor" content="#1e40af" />
-      <meta name="application-name" content="The 11 Exim Overseas" />
+      <meta name="application-name" content="TrustGlobe Exports" />
 
       {/* Structured Data */}
       <script type="application/ld+json">
