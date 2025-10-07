@@ -91,9 +91,9 @@ app.use(
         scriptSrc: ["'self'"],
         connectSrc: [
           "'self'",
-          "https://one1eximoverseas.onrender.com", // backend Render URL
-          "https://the11eximoverseas.com", // frontend domain
-          "https://www.the11eximoverseas.com",
+          "https://trustglobeexports.onrender.com", // backend Render URL
+          "https://trustglobeexports.com", // frontend domain
+          "https://www.trustglobeexports.com",
         ],
       },
     },
