@@ -99,7 +99,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
     if (!window.google) {
       const apiKey =
         (import.meta as any).env?.VITE_GOOGLE_MAPS_API_KEY ||
-        "AIzaSyDoy4xd7POgSrkLzxi8Z3b5DT4nrDA-zmw";
+        "";
 
       if (!apiKey) {
         console.error(

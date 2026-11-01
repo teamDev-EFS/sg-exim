@@ -18,7 +18,7 @@ The error "This page can't load Google Maps correctly" with "Do you own this web
 1. **Go to Google Cloud Console**: https://console.cloud.google.com/
 2. **Select Your Project** (or create a new one)
 3. **Navigate to APIs & Services > Credentials**
-4. **Find your API key**: `AIzaSyDoy4xd7POgSrkLzxi8Z3b5DT4nrDA-zmw`
+4. **Find your API key**: `YOUR_GOOGLE_MAPS_API_KEY`
 
 ### Step 2: Configure API Key Restrictions
 

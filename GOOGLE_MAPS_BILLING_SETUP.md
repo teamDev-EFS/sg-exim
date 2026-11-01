@@ -56,7 +56,7 @@ This guide helps you fix the `BillingNotEnabledMapError` by enabling billing for
 
    - https://console.cloud.google.com/apis/credentials
 
-2. **Find your API key**: `AIzaSyDoy4xd7POgSrkLzxi8Z3b5DT4nrDA-zmw`
+2. **Find your API key**: `YOUR_GOOGLE_MAPS_API_KEY`
 
 3. **Click on the API key** to edit it
 
