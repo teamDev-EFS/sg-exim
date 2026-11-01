@@ -7,8 +7,9 @@
   publish = "dist"
 
 [build.environment]
-  # Pause switch: set SITE_PAUSED=true in the Netlify UI (or uncomment below), then deploy.
-  # SITE_PAUSED = "true"
+  # Pause switch: "true" answers every URL with HTTP 503 and a "temporarily unavailable" page.
+  # This file overrides the Netlify UI. Set it to "false" and push to bring the site back.
+  SITE_PAUSED = "true"
   # Frontend Environment Variables for Netlify
   VITE_APP_NAME = "TrustGlobe Exports"
   VITE_APP_VERSION = "1.0.0"
